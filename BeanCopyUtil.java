@@ -25,7 +25,7 @@ public class BeanCopyUtil {
 			if ((methodName.startsWith("get") || methodName.startsWith("is")) && !methodName.equals("getClass")) {
 				try{
 					Class<?> returnType = method.getReturnType();
-					Object value = method.invoke(source, null);
+					Object value = method.invoke(source);
 					Class<? extends Object> br = destination.getClass();
 					Method destMethod;
 					if (methodName.startsWith("g")) {
